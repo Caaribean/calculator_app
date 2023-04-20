@@ -1,0 +1,6 @@
+@use "variables.scss" as v;
+
+* {
+    font-family: v.$chivo-mono;
+    font-size: 16px;
+}
