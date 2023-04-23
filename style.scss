@@ -1,4 +1,5 @@
 @use "variables.scss" as v;
+@use "mixins.scss" as m;
 @use "icons.scss";
 
 body {
@@ -7,128 +8,83 @@ body {
   background-color: v.$aquamarine;
 }
 
-.box {
-  background-color: v.$white;
-  width: 1100px;
-  height: 600px;
-  border-radius: 2rem;
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    &__header {
-      font-weight: 300;
-      color: v.$dark-gray;
-    }
-
-    &__btn {
-      background-color: v.$dark-green;
-      color: v.$white;
-      font-size: 1.5rem;
-      font-weight: 500;
-      border-radius: 0.5rem;
-      border: none;
-      padding: 0.3rem;
-    }
-
-    &__input {
-      background-color: v.$gray;
-      color: v.$dark-gray;
-      font-size: 1.5rem;
-      font-weight: 500;
-      border-radius: 0.5rem;
-      border: none;
-      text-align: center;
-      padding: 0.3rem;
-    }
-
-    .input-box {
-      position: relative;
-
-      .icon-dollar-sign {
-        position: absolute;
-        left: 20;
-        bottom: 15;
-        font-size: 1.2rem;
-        color: v.$ashen;
-      }
-
-      .icon-user {
-        position: absolute;
-        left: 20;
-        bottom: 15;
-        font-size: 1.2rem;
-        color: v.$ashen;
-      }
-
-      .input-txt {
-        position: absolute;
-        right: 20;
-        bottom: 10;
-        font-size: 1.2rem;
-        color: v.$ashen;
-      }
-
-      .all-content {
-        width: 100%;
-      }
-    }
-  }
-
-  &__calculator {
-    background-color: v.$dark-green;
+.container {
+  position: relative;
+  
+  .box {
+    background-color: v.$white;
+    width: 1100px;
+    height: 600px;
     border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
 
-    &__txt {
-      &__txt--white {
-        color: white;
+    &__form {
+      @include m.flex;
+
+      &__header {
+        @include m.header-form;
       }
 
-      &__txt--green {
-        color: v.$bottle-green;
-        font-size: 14px;
+      &__btn {
+        @include m.btn-small;
+      }
+
+      &__input {
+        @include m.input-form;
+
+        &.center {
+          text-align: center;
+        }
+      }
+
+      .input-box {
+        position: relative;
+
+        .icon-dollar-sign {
+          @include m.icon-dollar;
+        }
+
+        .icon-user {
+          @include m.icon-user;
+        }
+
+        .all-content {
+          width: 100%;
+        }
       }
     }
 
-    &__number {
-      font-size: 42px;
-      color: v.$bright-green;
-      font-weight: 700;
+    &__calculator {
+      @include m.flex;
+      background-color: v.$dark-green;
+      border-radius: 2rem;
+
+      &__txt {
+        &__txt--white {
+          @include m.txt-white;
+        }
+
+        &__txt--green {
+          @include m.txt-green;
+        }
+      }
+
+      &__number {
+        @include m.txt-number;
+      }
+
+      &__btn {
+        @include m.btn-big;
+      }
     }
 
-    &__btn {
-      background-color: v.$green;
-      border-radius: 2px;
-      color: v.$bottle-green2;
-      padding: 10px;
-      border: none;
-      text-transform: uppercase;
+    .box-btn {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 5px;
     }
-  }
-
-  .box-btn {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 5px;
   }
 }
-/* 
-.container {
-    position: relative; 
-
-    .box {
-        height: 600px;
-        width: 1000px;
-        background-color: v.$white; 
-        border-radius: 30px; 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 50%); 
-    }
-} */

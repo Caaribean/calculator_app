@@ -1,0 +1,94 @@
+@use "variables.scss" as v;
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin header-form {
+  font-size: 1rem;
+  font-weight: 300;
+  color: v.$dark-gray;
+}
+
+@mixin btn-small {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.3rem;
+  background-color: v.$dark-green;
+  color: v.$white;
+  border-radius: 0.5rem;
+  border: none;
+
+  &:hover {
+    background-color: v.$aquamarine;
+    color: v.$dark-green;
+  }
+}
+
+@mixin btn-big {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.6rem;
+  color: v.$bottle-green2;
+  background-color: v.$green;
+  border-radius: 0.2rem;
+  border: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: v.$aquamarine;
+    color: v.$dark-green;
+  }
+}
+
+@mixin input-form {
+  background-color: v.$gray;
+  color: v.$dark-gray;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: right;
+  padding: 0.3rem;
+  cursor: pointer;
+
+  &:focus {
+    border: 0.1rem solid v.$aquamarine;
+  }
+}
+
+@mixin icon-dollar {
+  position: absolute;
+  left: 20;
+  bottom: 15;
+  font-size: 1.2rem;
+  color: v.$ashen;
+}
+
+@mixin icon-user {
+  position: absolute;
+  left: 20;
+  bottom: 15;
+  font-size: 1.2rem;
+  color: v.$ashen;
+}
+
+@mixin txt-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: v.$bright-green;
+}
+
+@mixin txt-white {
+  font-size: 1rem;
+  font-weight: 400;
+  color: v.$white;
+}
+
+@mixin txt-green {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: v.$bottle-green;
+}
