@@ -1,3 +1,32 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.woff?dhly1t") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e926";
+}
+
+.icon-dollar-sign:before {
+  content: "\e925";
+}
+
 body {
   font-family: "Chivo Mono", monospace;
   font-size: 16px;
@@ -10,6 +39,11 @@ body {
   height: 600px;
   border-radius: 2rem;
 }
+.box__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .box__form__header {
   font-weight: 300;
   color: #767c7c;
@@ -17,18 +51,48 @@ body {
 .box__form__btn {
   background-color: #00474b;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
-  border-radius: 3px;
+  border-radius: 0.5rem;
   border: none;
+  padding: 0.3rem;
 }
 .box__form__input {
   background-color: #f3f8fb;
   color: #767c7c;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
-  border-radius: 3px;
+  border-radius: 0.5rem;
+  border: none;
   text-align: center;
+  padding: 0.3rem;
+}
+.box__form .input-box {
+  position: relative;
+}
+.box__form .input-box .icon-dollar-sign {
+  position: absolute;
+  left: 20;
+  bottom: 15;
+  font-size: 1.2rem;
+  color: #c3ced0;
+}
+.box__form .input-box .icon-user {
+  position: absolute;
+  left: 20;
+  bottom: 15;
+  font-size: 1.2rem;
+  color: #c3ced0;
+}
+.box__form .input-box .input-txt {
+  position: absolute;
+  right: 20;
+  bottom: 10;
+  font-size: 1.2rem;
+  color: #c3ced0;
+}
+.box__form .input-box .all-content {
+  width: 100%;
 }
 .box__calculator {
   background-color: #00474b;
@@ -55,6 +119,12 @@ body {
   color: #065d64;
   padding: 10px;
   border: none;
+  text-transform: uppercase;
+}
+.box .box-btn {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 
 /* 
