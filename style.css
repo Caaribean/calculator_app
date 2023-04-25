@@ -144,6 +144,6 @@ body {
 }
 .container .box .box-btn {
   display: flex;
-  gap: 5px;
-  margin-bottom: 5px;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
