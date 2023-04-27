@@ -1,0 +1,149 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.woff?dhly1t") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+  content: "\e926";
+}
+
+.icon-dollar-sign:before {
+  content: "\e925";
+}
+
+body {
+  font-family: "Chivo Mono", monospace;
+  font-size: 16px;
+  background-color: #c5e4e7;
+}
+
+.container {
+  position: relative;
+}
+.container .box {
+  background-color: #ffffff;
+  width: 1100px;
+  height: 600px;
+  border-radius: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+}
+.container .box__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .box__form__header {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #767c7c;
+}
+.container .box__form__btn {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.3rem;
+  background-color: #00474b;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  border: none;
+}
+.container .box__form__btn:hover {
+  background-color: #c5e4e7;
+  color: #00474b;
+}
+.container .box__form__input {
+  background-color: #f3f8fb;
+  color: #767c7c;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  text-align: right;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.container .box__form__input:focus {
+  border: 0.1rem solid #c5e4e7;
+}
+.container .box__form__input.center {
+  text-align: center;
+}
+.container .box__form .input-box {
+  position: relative;
+}
+.container .box__form .input-box .icon-dollar-sign {
+  position: absolute;
+  left: 20;
+  bottom: 15;
+  font-size: 1.2rem;
+  color: #c3ced0;
+}
+.container .box__form .input-box .icon-user {
+  position: absolute;
+  left: 20;
+  bottom: 15;
+  font-size: 1.2rem;
+  color: #c3ced0;
+}
+.container .box__form .input-box .all-content {
+  width: 100%;
+}
+.container .box__calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #00474b;
+  border-radius: 2rem;
+}
+.container .box__calculator__txt__txt--white {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+.container .box__calculator__txt__txt--green {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #5a8d91;
+}
+.container .box__calculator__number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2bb9a8;
+}
+.container .box__calculator__btn {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.6rem;
+  color: #065d64;
+  background-color: #0d686d;
+  border-radius: 0.2rem;
+  border: none;
+  text-transform: uppercase;
+}
+.container .box__calculator__btn:hover {
+  background-color: #c5e4e7;
+  color: #00474b;
+}
+.container .box .box-btn {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}/*# sourceMappingURL=style.css.map */

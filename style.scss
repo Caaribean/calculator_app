@@ -1,6 +1,90 @@
 @use "variables.scss" as v;
+@use "mixins.scss" as m;
+@use "icons.scss";
 
-* {
-    font-family: v.$chivo-mono;
-    font-size: 16px;
+body {
+  font-family: v.$chivo-mono;
+  font-size: 16px;
+  background-color: v.$aquamarine;
+}
+ 
+.container {
+  position: relative;
+
+  .box {
+    background-color: v.$white;
+    width: 1100px;
+    height: 600px;
+    border-radius: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+
+    &__form {
+      @include m.flex;
+
+      &__header {
+        @include m.header-form;
+      }
+
+      &__btn {
+        @include m.btn-small;
+      }
+
+      &__input {
+        @include m.input-form;
+
+        &.center {
+          text-align: center;
+        }
+      }
+
+      .input-box {
+        position: relative;
+
+        .icon-dollar-sign {
+          @include m.icon-dollar;
+        }
+
+        .icon-user {
+          @include m.icon-user;
+        }
+
+        .all-content {
+          width: 100%;
+        }
+      }
+    }
+
+    &__calculator {
+      @include m.flex;
+      background-color: v.$dark-green;
+      border-radius: 2rem;
+
+      &__txt {
+        &__txt--white {
+          @include m.txt-white;
+        }
+
+        &__txt--green {
+          @include m.txt-green;
+        }
+      }
+
+      &__number {
+        @include m.txt-number;
+      }
+
+      &__btn {
+        @include m.btn-big;
+      }
+    }
+
+    .box-btn {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
