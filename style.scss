@@ -6,7 +6,7 @@ body {
   font-family: v.$chivo-mono;
   font-size: 16px;
   background-color: v.$aquamarine;
-}
+} 
  
 .container {
   position: relative;
@@ -22,7 +22,7 @@ body {
     transform: translate(-50%, 50%);
 
     &__form {
-      @include m.flex;
+      @include m.flex; 
 
       &__header {
         @include m.header-form;
@@ -39,10 +39,10 @@ body {
           text-align: center;
         }
       }
-
+  
       .input-box {
         position: relative;
-
+   
         .icon-dollar-sign {
           @include m.icon-dollar;
         }
@@ -54,6 +54,10 @@ body {
         .all-content {
           width: 100%;
         }
+      }
+
+      .error-message {
+        @include m.error-message; 
       }
     }
 
@@ -72,19 +76,25 @@ body {
         }
       }
 
-      &__number {
+      &__number {   
         @include m.txt-number;
-      }
+      } 
 
       &__btn {
         @include m.btn-big;
-      }
+      }                
     }
 
     .box-btn {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.5rem;     
       margin-bottom: 0.5rem;
     }
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

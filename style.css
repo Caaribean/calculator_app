@@ -69,6 +69,11 @@ body {
   background-color: #c5e4e7;
   color: #00474b;
 }
+.container .box__form__btn[choosen-discount] {
+  background-color: #ffffff;
+  color: #00474b;
+  border: 0.2rem solid #c5e4e7;
+}
 .container .box__form__input {
   background-color: #f3f8fb;
   color: #767c7c;
@@ -80,8 +85,12 @@ body {
   padding: 0.3rem;
   cursor: pointer;
 }
-.container .box__form__input:focus {
-  border: 0.1rem solid #c5e4e7;
+.container .box__form__input:focus, .container .box__form__input:focus-visible {
+  border: 0.2rem solid #c5e4e7;
+  outline: 0;
+}
+.container .box__form__input[invalid] {
+  border: 0.2rem solid #FF0000;
 }
 .container .box__form__input.center {
   text-align: center;
@@ -105,6 +114,12 @@ body {
 }
 .container .box__form .input-box .all-content {
   width: 100%;
+}
+.container .box__form .error-message {
+  display: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #FF0000;
 }
 .container .box__calculator {
   display: flex;
@@ -146,4 +161,10 @@ body {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
