@@ -2,28 +2,28 @@
 
 
 window.addEventListener("load", function () {
-
-    console.log("Strona zaladowala sie")
     let selectedTip;
+    let tipAmount;
+    let totalPerPerson;
 
+    const tipText = document.getElementById("tip-text");
+    const totalText = document.getElementById("total-text");
     const btn5 = document.getElementById("btn-5");
     const btn10 = document.getElementById("btn-10");
     const btn15 = document.getElementById("btn-15");
     const btn25 = document.getElementById("btn-25");
     const btn50 = document.getElementById("btn-50");
     const btnReset = document.getElementById("btn-reset");
+    const btnCalculate = document.getElementById("btn-calculate");
     const inputBill = document.getElementById("input-bill");
     const inputCustom = document.getElementById("input-custom");
     const inputPeople = document.getElementById("input-people");
-    const errorMessageBill = document.getElementById("error-bill"); 
-    const errorMessageCustom = document.getElementById("error-custom"); 
-    const errorMessagePeople = document.getElementById("error-people"); 
- 
+    const errorMessageBill = document.getElementById("error-bill");
+    const errorMessageCustom = document.getElementById("error-custom");
+    const errorMessagePeople = document.getElementById("error-people");
 
     inputBill.addEventListener('change', (e) => {
-        console.log(e)
         const isValid = validValueFromInput(e.target.value);
-        console.log(isValid)
         if (isValid) {
             e.target.removeAttribute('invalid');
         } else {
@@ -32,82 +32,74 @@ window.addEventListener("load", function () {
         }
     });
 
-
     inputCustom.addEventListener('change', (e) => {
-        console.log(e)
         const isValid = validValueFromInput(e.target.value);
-        console.log(isValid)
+        removeAttributeFromButtons();
         if (isValid) {
             e.target.removeAttribute('invalid');
-            removeAttributeFromButtons();
         } else {
             e.target.setAttribute('invalid', !isValid);
-            removeAttributeFromButtons();
             inputVisibilityCustom();
-        } 
+        }
     });
 
     inputPeople.addEventListener('change', (e) => {
-        console.log(e)
         const isValid = validValueFromInput(e.target.value);
-        console.log(isValid)
         if (isValid) {
             e.target.removeAttribute('invalid');
         } else {
             e.target.setAttribute('invalid', !isValid);
             inputVisibilityPeople();
-        } 
+        }
     });
 
     btn5.addEventListener('click', (e) => {
-        removeAttributeFromButtons();
-        selectedTip = 5;
-        e.target.setAttribute('choosen-discount', true);
-        inputCustom.value = "";  
+        afterOnClickTipButtons(5, e)
     });
     btn10.addEventListener('click', (e) => {
-        removeAttributeFromButtons();
-        selectedTip = 10;
-        e.target.setAttribute('choosen-discount', true);
-        inputCustom.value = ""; 
+        afterOnClickTipButtons(10, e)
     });
     btn15.addEventListener('click', (e) => {
-        removeAttributeFromButtons();
-        selectedTip = 15;
-        e.target.setAttribute('choosen-discount', true);
-        inputCustom.value = ""; 
+        afterOnClickTipButtons(15, e)
     });
     btn25.addEventListener('click', (e) => {
-        removeAttributeFromButtons();
-        selectedTip = 25;
-        e.target.setAttribute('choosen-discount', true);
-        inputCustom.value = ""; 
+        afterOnClickTipButtons(25, e)
     });
     btn50.addEventListener('click', (e) => {
-        removeAttributeFromButtons();
-        selectedTip = 50;
-        e.target.setAttribute('choosen-discount', true);
-        inputCustom.value = ""; 
+        afterOnClickTipButtons(50, e)
     });
 
     btnReset.addEventListener('click', (e) => {
         removeAttributeFromButtons();
-        clearFields(); 
-    });       
+        clearFields();
+    });
+
+    btnCalculate.addEventListener('click', (e) => {
+        calculate();
+    });
+
+    function afterOnClickTipButtons(tipValue, event) {
+        removeAttributeFromButtons();
+        selectedTip = tipValue;
+        event.target.setAttribute('choosen-discount', true);
+        inputCustom.value = "";
+    }
 
     function validValueFromInput(value) {
         return value > 0;
     }
- 
+
     function clearFields() {
-        inputBill.value = ""; 
-        inputCustom.value = ""; 
-        inputPeople.value = ""; 
+        inputBill.value = "";
+        inputCustom.value = "";
+        inputPeople.value = "";
         inputNotVisibility();
-        inputBill.removeAttribute('invalid'); 
-        inputCustom.removeAttribute('invalid'); 
-        inputPeople.removeAttribute('invalid'); 
-   }  
+        inputBill.removeAttribute('invalid');
+        inputCustom.removeAttribute('invalid');
+        inputPeople.removeAttribute('invalid');
+        tipText.textContent = '$ 0.00';
+        totalText.textContent = '$ 0.00';
+    }
 
     function removeAttributeFromButtons() {
         btn5.removeAttribute('choosen-discount');
@@ -130,21 +122,32 @@ window.addEventListener("load", function () {
     }
 
     function inputNotVisibility() {
-        errorMessageBill.style.display = "none"; 
-        errorMessageCustom.style.display = "none"; 
-        errorMessagePeople.style.display = "none"; 
+        errorMessageBill.style.display = "none";
+        errorMessageCustom.style.display = "none";
+        errorMessagePeople.style.display = "none";
     }
- 
 
- 
+    function calculate() {
+        let billValue = Number(inputBill.value);
+        let peopleValue = Number(inputPeople.value);
+        let customTipValue = Number(inputCustom.value);
+
+        if (billValue && peopleValue && (customTipValue || selectedTip)) {
+            if (selectedTip) {
+                tipAmount = billValue * (selectedTip / 100);
+                totalPerPerson = (tipAmount + billValue) / peopleValue;
+            } else {
+                tipAmount = billValue * (customTipValue / 100);
+                totalPerPerson = (tipAmount + billValue) / peopleValue;
+            }
+
+            tipText.textContent = '$ ' + tipAmount; //użyć zaokrąglenia do dwóch miejsc po przecinku
+            totalText.textContent = '$ ' + totalPerPerson; //użyć zapokrąglenia do dwóch miejsc po przecinku
+        } else {
+            console.log("BŁĄD")
+        }
 
 
-
-
-
-
- 
+    }
 
 })
-
-console.log("przed załadowaniem strony")
