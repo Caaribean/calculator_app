@@ -72,7 +72,7 @@ body {
         }
 
         &__txt--green {
-          @include m.txt-green;
+          @include m.txt-green;  
         }
       }
 
@@ -89,6 +89,11 @@ body {
       display: flex;
       gap: 0.5rem;     
       margin-bottom: 0.5rem;
+    }
+
+    .btn-wrapper {
+      display: flex; 
+      gap: 1rem; 
     }
   }
 }

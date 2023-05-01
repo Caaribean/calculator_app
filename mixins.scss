@@ -19,7 +19,7 @@
   background-color: v.$dark-green;
   color: v.$white;
   border-radius: 0.5rem;
-  border: none;
+  border: 0.2rem solid transparent;
 
   &:hover {
     background-color: v.$aquamarine;
@@ -56,7 +56,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 0.5rem;
-  border: none;
+  border: 0.2rem solid transparent;
   text-align: right;
   padding: 0.3rem;
   cursor: pointer;
@@ -71,8 +71,6 @@
     border: 0.2rem solid v.$red;
   }
 }
-
-
 
 @mixin icon-dollar {
   position: absolute;
@@ -91,7 +89,7 @@
 }
 
 @mixin txt-number {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: v.$bright-green;
 }

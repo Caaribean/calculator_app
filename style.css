@@ -63,7 +63,7 @@ body {
   background-color: #00474b;
   color: #ffffff;
   border-radius: 0.5rem;
-  border: none;
+  border: 0.2rem solid transparent;
 }
 .container .box__form__btn:hover {
   background-color: #c5e4e7;
@@ -80,7 +80,7 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 0.5rem;
-  border: none;
+  border: 0.2rem solid transparent;
   text-align: right;
   padding: 0.3rem;
   cursor: pointer;
@@ -139,7 +139,7 @@ body {
   color: #5a8d91;
 }
 .container .box__calculator__number {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #2bb9a8;
 }
@@ -161,6 +161,10 @@ body {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+}
+.container .box .btn-wrapper {
+  display: flex;
+  gap: 1rem;
 }
 
 input::-webkit-outer-spin-button,
