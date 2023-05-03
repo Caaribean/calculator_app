@@ -83,6 +83,8 @@ window.addEventListener("load", function () {
     selectedTip = tipValue;
     event.target.setAttribute("choosen-discount", true);
     inputCustom.value = "";
+    errorMessageCustom.style.display = "none"; 
+    inputCustom.removeAttribute("invalid");
   }
 
   function validValueFromInput(value) {
@@ -143,11 +145,7 @@ window.addEventListener("load", function () {
 
       tipText.textContent = "$ " + tipAmount.toFixed(2);
       totalText.textContent = "$ " + totalPerPerson.toFixed(2);
-    } /* else {
-      console.log("BŁĄD");
-      tipText.textContent = "$ 0.00";
-      totalText.textContent = "$ 0.00";
-    } */
+    }
 
     if (billValue < 0) {
       errorMessageBill.style.display = "block";
@@ -163,6 +161,11 @@ window.addEventListener("load", function () {
 
     if (customTipValue < 0) {
       errorMessageCustom.style.display = "block";
+      tipText.textContent = "$ 0.00";
+      totalText.textContent = "$ 0.00";
+    }
+
+    else {
       tipText.textContent = "$ 0.00";
       totalText.textContent = "$ 0.00";
     }
