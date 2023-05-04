@@ -29,13 +29,12 @@
   &[choosen-discount] {
     background-color: v.$white;
     color: v.$dark-green;
-    border: 0.2rem solid v.$aquamarine; 
+    border: 0.2rem solid v.$aquamarine;
   }
-
 }
 
 @mixin btn-big {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   font-weight: 700;
   padding: 0.6rem;
   color: v.$bottle-green2;
@@ -60,6 +59,12 @@
   text-align: right;
   padding: 0.3rem;
   cursor: pointer;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   &:focus,
   &:focus-visible {
@@ -107,8 +112,8 @@
 }
 
 @mixin error-message {
-  display: none; 
+  display: none;
   font-size: 1rem;
   font-weight: 500;
-  color: v.$red; 
+  color: v.$red;
 }
