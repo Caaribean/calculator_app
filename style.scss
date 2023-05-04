@@ -72,7 +72,7 @@ body {
         }
 
         &__txt--green {
-          @include m.txt-green;
+          @include m.txt-green;  
         }
       }
 
@@ -90,11 +90,10 @@ body {
       gap: 0.5rem;     
       margin-bottom: 0.5rem;
     }
-  }
-}
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    .btn-wrapper {
+      display: flex; 
+      gap: 1rem; 
+    }
+  }
 }
